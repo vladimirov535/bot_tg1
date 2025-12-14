@@ -279,3 +279,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+app.run_polling(drop_pending_updates=True)
+
+    # держим процесс живым
+    asyncio.get_event_loop().run_forever()
