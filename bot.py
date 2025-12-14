@@ -121,7 +121,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     jq = context.application.job_queue
 
-    jq.run_once(step_15, when=15 * 60, name=job_name(chat_id, "15m"), data={"chat_id": chat_id})
+    jq.run_once(step_15, when=15, name=job_name(chat_id, "15m"), data={"chat_id": chat_id})
     jq.run_once(step_24h, when=24 * 60 * 60, name=job_name(chat_id, "24h"), data={"chat_id": chat_id})
     jq.run_once(step_50h, when=50 * 60 * 60, name=job_name(chat_id, "50h"), data={"chat_id": chat_id})
 
