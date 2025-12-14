@@ -87,21 +87,31 @@ def make_kb(button_text: str, url: str) -> InlineKeyboardMarkup:
 async def send_step_0(chat_id: int, context: ContextTypes.DEFAULT_TYPE):
     # Видео
     if VIDEO_FILE_ID:
-        await context.bot.send_video(chat_id=chat_id, video=VIDEO_FILE_ID)
+        await context.bot.send_video(
+            chat_id=chat_id,
+            video=VIDEO_FILE_ID
+        )
     elif VIDEO_URL:
-        await context.bot.send_video(chat_id=chat_id, video=VIDEO_URL)
+        await context.bot.send_video(
+            chat_id=chat_id,
+            video=VIDEO_URL
+        )
     else:
-        # если видео пока не настроено
-        await context.bot.send_message(chat_id=chat_id, text="(Видео пока не настроено)")
+        await context.bot.send_message(
+            chat_id=chat_id,
+            text="(Видео пока не настроено)"
+        )
 
     # Сообщение + кнопка
-   await context.bot.send_message(
-    chat_id=chat_id,
-    text=TEXT_0,
-    reply_markup=keyboard,
-    parse_mode="HTML",
-    disable_web_page_preview=True
-)
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=TEXT_0,
+        reply_markup=make_kb(BTN_0, URL_0),
+        parse_mode="HTML",
+        disable_web_page_preview=True
+    )
+
+
 
 
 async def step_15_job(context: ContextTypes.DEFAULT_TYPE):
@@ -109,6 +119,7 @@ async def step_15_job(context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=chat_id,
         text=TEXT_15,
+        parse_mode="HTML",
         reply_markup=make_kb(BTN_15, URL_15),
         disable_web_page_preview=True,
     )
@@ -119,6 +130,7 @@ async def step_24h_job(context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=chat_id,
         text=TEXT_24H,
+        parse_mode="HTML",
         reply_markup=make_kb(BTN_24H, URL_24H),
         disable_web_page_preview=True,
     )
@@ -129,6 +141,7 @@ async def step_50h_job(context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=chat_id,
         text=TEXT_50H,
+        parse_mode="HTML",
         reply_markup=make_kb(BTN_50H, URL_50H),
         disable_web_page_preview=True,
     )
