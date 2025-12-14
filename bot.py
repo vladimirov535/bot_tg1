@@ -223,7 +223,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # через 15 минут = 15 * 60
     context.job_queue.run_once(
         step_15_job,
-        when=20,
+        when=15 * 60,
         name=job_name(chat_id, "15m"),
         data={"chat_id": chat_id},
     )
