@@ -2,7 +2,7 @@ from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import os
 
-TOKEN = os.getenv("8563535791:AAHCDopTIwTDFLyxGqaUByD1i-xze6EW2-Y")  # токен берём из переменных окружения
+TOKEN = os.getenv("TELEGRAM_TOKEN")  # токен берём из переменных окружения
 
 # сюда вставь ссылку на свой лид-магнит (гугл-диск, лендинг, гидкурс и т.п.)
 LEAD_MAGNET_URL = "https://example.com/lead-magnet"
