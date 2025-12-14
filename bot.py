@@ -17,7 +17,7 @@ TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 # ВИДЕО:
 # 1) Лучше всего вставить file_id (после того как получим его)
-VIDEO_FILE_ID = ""  # пример: "BAACAgIAAxkBAA..."  (пока пусто)
+VIDEO_FILE_ID = "BAACAgIAAxkBAAMTaT8DMTErXAugYxUU7GmGll78FTQAAimVAALjvPlJTIVl0usumb82BA"
 
 # Если file_id нет, можно вставить URL на видео (но не всегда стабильно)
 VIDEO_URL = ""  # пример: "https://....mp4"
