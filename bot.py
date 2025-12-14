@@ -275,12 +275,12 @@ def main():
     app.add_handler(MessageHandler(filters.VIDEO, get_video_id))
 
     app.run_polling()
+    app.run_polling(drop_pending_updates=True)
+    app.run_polling(drop_pending_updates=True)
 
+    # держим процесс живым
+    asyncio.get_event_loop().run_forever()
 
 if __name__ == "__main__":
     main()
 
-app.run_polling(drop_pending_updates=True)
-
-    # держим процесс живым
-    asyncio.get_event_loop().run_forever()
