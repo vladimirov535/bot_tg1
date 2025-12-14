@@ -149,7 +149,10 @@ async def send_step_0(chat_id: int, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=chat_id,
         text=TEXT_0,
-@@ -119,110 +82,57 @@
+        parse_mode="HTML",
+        reply_markup=make_kb(BTN_0, URL_0),
+        disable_web_page_preview=True,
+        parse_mode="HTML",
         disable_web_page_preview=True
     )
 
